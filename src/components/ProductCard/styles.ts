@@ -13,7 +13,6 @@ export const CardWrapper = styled.div`
     justify-content: space-between;
     height: 40rem;
     width: 32rem;
-    margin: ${theme.spacings.medium} ${theme.spacings.medium};
     background: ${theme.gradients.categories[category]};
     border-radius: ${theme.border.radius};
     box-shadow: ${theme.shadows.card};
@@ -28,6 +27,7 @@ export const CardImage = styled.img`
     background: ${theme.colors.gray};
     border-top-right-radius: ${theme.border.radius};
     border-top-left-radius: ${theme.border.radius};
+    opacity: 0.4;
   `}
 `;
 

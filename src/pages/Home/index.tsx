@@ -3,6 +3,8 @@ import { useState, useEffect, useCallback } from 'react';
 import productsService from 'services/productsService';
 
 import ProductEntity from 'utils/types/ProductEntity';
+
+import SearchBar from 'components/SearchBar';
 import ProductCard from 'components/ProductCard';
 
 import * as S from './styles';
@@ -21,6 +23,7 @@ const Home = () => {
 
   return (
     <S.Container>
+      <SearchBar />
       <S.ContentWrapper>
         {products.map((item: ProductEntity) => (
           <ProductCard

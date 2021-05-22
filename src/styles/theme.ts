@@ -47,4 +47,13 @@ export default {
     xlarge: '6.4rem',
     xxlarge: '12.8rem',
   },
+  breakpoints: {
+    xxsmall: '150px',
+    xsmall: '500px',
+    small: '850px',
+    medium: '1200px',
+    large: '1550px',
+    xlarge: '1900px',
+    xxlarge: '2250px',
+  },
 };
