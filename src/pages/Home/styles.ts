@@ -41,3 +41,8 @@ export const ContentWrapper = styled.section`
     }
   `}
 `;
+
+export const FilterForm = styled.form`
+  display: flex;
+  flex-direction: row;
+`;

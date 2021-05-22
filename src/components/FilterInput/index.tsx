@@ -1,12 +1,11 @@
 import FilterInputProps from './interface';
 import * as S from './styles';
 
-const FilterInput = ({ fieldName, ...rest }: FilterInputProps) => {
-  return (
-    <S.FilterInputWrapper>
-      <S.FilterInput {...rest} />
-    </S.FilterInputWrapper>
-  );
+const FilterInput = ({
+  customSize = 'md',
+  ...inputProps
+}: FilterInputProps) => {
+  return <S.StyledFilterInput customSize={customSize} {...inputProps} />;
 };
 
 export default FilterInput;

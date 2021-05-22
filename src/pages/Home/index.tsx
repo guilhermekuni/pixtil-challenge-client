@@ -12,16 +12,12 @@ import * as S from './styles';
 const initialFilters = {
   _page: 1,
   id: '',
+  category: '',
 };
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState(initialFilters);
-
-  // const handleGetProducts = useCallback(async () => {
-  //   const { data } = await productsService.getProducts(filters);
-  //   setProducts(data);
-  // }, [setProducts, filters]);
 
   const handleGetProducts = useCallback(
     async (filters) => {
@@ -47,14 +43,20 @@ const Home = () => {
 
   return (
     <S.Container>
-      <form onSubmit={handleFiltersSubmit}>
+      <S.FilterForm onSubmit={handleFiltersSubmit}>
         <FilterInput
-          fieldName="id"
           placeholder="Filter by id"
           value={filters.id}
           onChange={(e) => handleChangeFilter({ id: e.target.value })}
         />
-      </form>
+        <FilterInput
+          customSize="lg"
+          placeholder="Filter by category"
+          value={filters.category}
+          onChange={(e) => handleChangeFilter({ category: e.target.value })}
+        />
+        <button type="submit">Search</button>
+      </S.FilterForm>
       <S.ContentWrapper>
         {products.map((item: ProductEntity) => (
           <ProductCard

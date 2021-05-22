@@ -1,24 +1,29 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-export const FilterInputWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    width: 20rem;
-    height: 4rem;
-    padding: 0 ${theme.spacings.medium};
-  `}
-`;
+interface StyledFilterInputProps {
+  theme: DefaultTheme;
+  customSize: 'sm' | 'md' | 'lg';
+}
 
-export const FilterInput = styled.input`
-  ${({ theme }) => css`
+const inputSizes = {
+  sm: '15rem',
+  md: '20rem',
+  lg: '30rem',
+};
+
+export const StyledFilterInput = styled.input`
+  ${({ theme, customSize }: StyledFilterInputProps) => css`
     display: flex;
     flex: 1;
+    width: ${inputSizes[customSize]};
+    height: 4rem;
     border-radius: ${theme.border.radius};
     background: transparent;
     border: 2px solid ${theme.colors.primary};
     font-weight: bold;
     outline: none;
     padding: 0 ${theme.spacings.medium};
+    margin-right: ${theme.spacings.medium};
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.small};
 
