@@ -53,7 +53,7 @@ As I said, I only had one day to built this project, so it has a lot of things t
 - I didn't use all of the properties from the API available for me. My idea was to built another page to navigate and see these other properties.
 - As I said, the app could have another page, which would make it reasonable to use Redux or ContextAPI to the global state control. But at the end, the App just have one page, so didn't make sense to add this complexity right now.
 
-As you can see, there are a lot of things to improve, there are so much things that I wanted to implement, but dind't have the time, so I had to choose what was more important, and I choose a good code structure, which is the foundation to any project. For example:
+As you can see, there are a lot of things to improve, there are so many things that I wanted to implement, but dind't have the time, so I had to choose what was more important, and I choose a good code structure, which is the foundation to any project. For example:
 - We don't have much unit tests, but we have the structure to implement more, already testing our UI with our custom theme;
 - We don't have the beter UX/UI, but we have the custom theme and the structure to integrate with a Design System;
 - We don't have a lot of components, but we have some well implemented/abstracted components, which have documentation too;
