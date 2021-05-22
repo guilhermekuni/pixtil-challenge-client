@@ -1,6 +1,3 @@
-import { getByPlaceholderText } from '@testing-library/dom';
-import React from 'react';
-
 import { renderWithTheme } from 'utils/testHelper';
 
 import FilterInput from '.';
@@ -12,5 +9,13 @@ describe('component FilterInput', () => {
     );
 
     expect(getByPlaceholderText('filter by type')).toBeInTheDocument();
+  });
+
+  it('should match snapshot', () => {
+    const { container } = renderWithTheme(
+      <FilterInput customSize="sm" placeholder="filter by type" />
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });
