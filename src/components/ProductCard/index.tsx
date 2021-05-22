@@ -2,12 +2,9 @@ import ProductCardProps from './interface';
 import * as S from './styles';
 
 const ProductCard = ({
-  id,
   strain,
   strainType,
-  brand,
   category,
-  weightGrams,
   placeholderImg,
 }: ProductCardProps) => (
   <S.CardWrapper category={category}>
