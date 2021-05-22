@@ -16,7 +16,7 @@ This project is a Frontend Web Application, built with React in less than one da
 Please, check it out the following links:
 
 - This application is running on Netlify: [Pixtil Web App](https://elated-easley-7587b0.netlify.app/);
-- This application also has a Storybook components documentation, which is also running on Netlify: [Storybook Documentation](https://adoring-edison-4ee2c5.netlify.app/?path=/story/productcard--basic);
+- This application has a Storybook components documentation, which is also running on Netlify: [Storybook Documentation](https://adoring-edison-4ee2c5.netlify.app/?path=/story/productcard--basic);
 - The Fake API is running on Heroku:  [https://pixtil-challenge-server.herokuapp.com/](https://pixtil-challenge-server.herokuapp.com/).
 
 If you want, you can check the Fake API repository here: [https://github.com/guilhermekuni/pixtil-challenge-server](https://github.com/guilhermekuni/pixtil-challenge-server) 
