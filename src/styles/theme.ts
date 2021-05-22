@@ -13,6 +13,9 @@ export default {
       xxlarge: '5.2rem',
     },
   },
+  border: {
+    radius: '2rem',
+  },
   colors: {
     primary: '#90a955',
     primaryHover: '#4f772d',
@@ -23,6 +26,17 @@ export default {
     white: '#FFFFFF',
     black: '#0b090b',
     brown: '#9b6a6c',
+    gray: '#cdcd',
+  },
+  gradients: {
+    categories: {
+      flower: 'linear-gradient(-45deg, #fad6a6, #f06966)',
+      vape: 'linear-gradient(-45deg, #80ffea, #9580ff)',
+      preroll: 'linear-gradient(-45deg, #d6ff7f, #00b3cc)',
+    },
+  },
+  shadows: {
+    card: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)',
   },
   spacings: {
     xxsmall: '0.8rem',
