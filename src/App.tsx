@@ -5,13 +5,11 @@ import GlobalStyle from 'styles/global';
 
 import Home from 'pages/Home';
 
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Home />
-    </ThemeProvider>
-  );
-};
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Home />
+  </ThemeProvider>
+);
 
 export default App;

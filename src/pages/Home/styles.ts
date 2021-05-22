@@ -1,4 +1,11 @@
 import styled, { css } from 'styled-components';
+import LoadingOverlay from 'react-loading-overlay';
+
+export const LoadingWrapper = styled(LoadingOverlay)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Container = styled.div`
   ${({ theme }) => css`

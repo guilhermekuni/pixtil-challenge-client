@@ -18,13 +18,16 @@ const initialFilters = {
 };
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({ ...initialFilters });
 
   const handleGetProducts = useCallback(
     async (filters) => {
+      setLoading(true);
       const { data } = await productsService.getProducts(filters);
       setProducts(data);
+      setLoading(false);
     },
     [setProducts]
   );
@@ -49,48 +52,52 @@ const Home = () => {
   }, [handleGetProducts]);
 
   return (
-    <S.Container>
-      <S.FilterForm onSubmit={handleFiltersSubmit}>
-        <FilterInput
-          customSize="sm"
-          placeholder="filter by strain"
-          value={filters.strain}
-          onChange={(e) => handleChangeFilter({ strain: e.target.value })}
-        />
-        <FilterInput
-          customSize="sm"
-          placeholder="filter by type"
-          value={filters.strain_type}
-          onChange={(e) => handleChangeFilter({ strain_type: e.target.value })}
-        />
-        <FilterInput
-          customSize="lg"
-          placeholder="filter by category"
-          value={filters.category}
-          onChange={(e) => handleChangeFilter({ category: e.target.value })}
-        />
-        <Button type="submit" isPrimary>
-          search
-        </Button>
-        <Button type="button" onClick={handleClearFilters}>
-          clear
-        </Button>
-      </S.FilterForm>
-      <S.ContentWrapper>
-        {products.map((item: ProductEntity) => (
-          <ProductCard
-            key={item.id}
-            id={item.id}
-            strain={item.strain}
-            strainType={item.strain_type}
-            brand={item.brand}
-            weightGrams={item.weight_grams}
-            placeholderImg={item.placeholder_img}
-            category={item.category}
+    <S.LoadingWrapper active={loading} spinner>
+      <S.Container>
+        <S.FilterForm onSubmit={handleFiltersSubmit}>
+          <FilterInput
+            customSize="sm"
+            placeholder="filter by strain"
+            value={filters.strain}
+            onChange={(e) => handleChangeFilter({ strain: e.target.value })}
           />
-        ))}
-      </S.ContentWrapper>
-    </S.Container>
+          <FilterInput
+            customSize="sm"
+            placeholder="filter by type"
+            value={filters.strain_type}
+            onChange={(e) =>
+              handleChangeFilter({ strain_type: e.target.value })
+            }
+          />
+          <FilterInput
+            customSize="lg"
+            placeholder="filter by category"
+            value={filters.category}
+            onChange={(e) => handleChangeFilter({ category: e.target.value })}
+          />
+          <Button type="submit" isPrimary>
+            search
+          </Button>
+          <Button type="button" onClick={handleClearFilters}>
+            clear
+          </Button>
+        </S.FilterForm>
+        <S.ContentWrapper>
+          {products.map((item: ProductEntity) => (
+            <ProductCard
+              key={item.id}
+              id={item.id}
+              strain={item.strain}
+              strainType={item.strain_type}
+              brand={item.brand}
+              weightGrams={item.weight_grams}
+              placeholderImg={item.placeholder_img}
+              category={item.category}
+            />
+          ))}
+        </S.ContentWrapper>
+      </S.Container>
+    </S.LoadingWrapper>
   );
 };
 
