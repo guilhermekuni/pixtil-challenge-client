@@ -35,14 +35,14 @@ To run the tests:
 1. Run `yarn` to install the dependecies;
 2. Run `yarn test` to run the implemented tests.
 
-## Tech Decisions
+## Tech Decisions 💻: 
 This application was built mostly with React, TypeScript, Styled Components and Storybook. The goal was to build something scalable and easy to mantain.
 - **React** is the core tech of the application, everything was choosen with the React ecosystem in mind.
 - **TypeScript** was used to bring more padronization to the code. It makes easier to debbug and read code because of its type intellisense, and it also have a really nice synergy with Storybook. 
 - **Styled Components** is awesome because of the CSS-in-JS, which give us a lot of flexibility writting and validating our styles. Furthermore, it forces us to maintain the CSS scoped, which makes easier to maintain and scale the project. With Styled Components I was able to implement a theme for our styles too, which brings more quality and readability to our code.
 - **Storybook** was used to built our components documentation. It have a really nice synergy with typescript because of its controls/props, which makes really easy to test and understand our UI components.
 
-## Tech Debits / Improvements
+## Tech Debits / Improvements  🛠️:
 As I said, I only had one day to built this project, so it has a lot of things to improve, such as:
 - Implement more unit tests. I only implemented 2 simple tests with Jest at the application, but I built the structure to keep implementing tests (we can test our components using our custom theme, for example);
 - I wasn't able to add/finish a lot of features, such as URL query filter and paginating. I implemented only 3 filters and mocked the `page` param.
