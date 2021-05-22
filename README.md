@@ -26,7 +26,7 @@ If you want, you can check the Fake API repository here: [https://github.com/gui
 
 ## Running :rocket:
 
-To see the application you can check the first link above, but you want, you can also run it locally by following the steps:
+To see the application you can check the first link above, but if you want, you can also run it locally by following the steps:
 1. Run `yarn` to install the dependecies;
 2. Run `yarn start` to run projecto (it will be running on port 3000).
 
