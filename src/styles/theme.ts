@@ -27,6 +27,7 @@ export default {
     black: '#0b090b',
     brown: '#9b6a6c',
     gray: '#cdcd',
+    primaryGradient: 'linear-gradient(-45deg, #80ffea, #9580ff)',
   },
   gradients: {
     categories: {

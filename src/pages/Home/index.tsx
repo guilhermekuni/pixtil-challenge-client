@@ -5,6 +5,7 @@ import productsService from 'services/productsService';
 import ProductEntity from 'utils/types/ProductEntity';
 
 import FilterInput from 'components/FilterInput';
+import Button from 'components/Button';
 import ProductCard from 'components/ProductCard';
 
 import * as S from './styles';
@@ -45,17 +46,21 @@ const Home = () => {
     <S.Container>
       <S.FilterForm onSubmit={handleFiltersSubmit}>
         <FilterInput
-          placeholder="Filter by id"
+          customSize="sm"
+          placeholder="filter by id"
           value={filters.id}
           onChange={(e) => handleChangeFilter({ id: e.target.value })}
         />
         <FilterInput
           customSize="lg"
-          placeholder="Filter by category"
+          placeholder="filter by category"
           value={filters.category}
           onChange={(e) => handleChangeFilter({ category: e.target.value })}
         />
-        <button type="submit">Search</button>
+        <Button type="submit" isPrimary>
+          search
+        </Button>
+        <Button type="button">clear</Button>
       </S.FilterForm>
       <S.ContentWrapper>
         {products.map((item: ProductEntity) => (
