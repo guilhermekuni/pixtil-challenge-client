@@ -19,7 +19,10 @@ Please, check it out the following links:
 - This application has a Storybook components documentation, which is also running on Netlify: [Storybook Documentation](https://adoring-edison-4ee2c5.netlify.app/?path=/story/productcard--basic);
 - The Fake API is running on Heroku:  [https://pixtil-challenge-server.herokuapp.com/](https://pixtil-challenge-server.herokuapp.com/).
 
-If you want, you can check the Fake API repository here: [https://github.com/guilhermekuni/pixtil-challenge-server](https://github.com/guilhermekuni/pixtil-challenge-server) 
+If you want, you can check the Fake API repository here: [https://github.com/guilhermekuni/pixtil-challenge-server](https://github.com/guilhermekuni/pixtil-challenge-server)
+
+<image src="screenshots/application_screenshot.jpg" width="100%" />
+<image src="screenshots/storybook_screenshot.jpg" width="100%" />
 
 ## Running :rocket:
 
@@ -35,10 +38,10 @@ To run the tests:
 1. Run `yarn` to install the dependecies;
 2. Run `yarn test` to run the implemented tests.
 
-## Tech Decisions 💻: 
+## Tech Decisions 💻:
 This application was built mostly with React, TypeScript, Styled Components and Storybook. The goal was to build something scalable and easy to mantain.
 - **React** is the core tech of the application, everything was choosen with the React ecosystem in mind.
-- **TypeScript** was used to bring more padronization to the code. It makes easier to debbug and read code because of its type intellisense, and it also have a really nice synergy with Storybook. 
+- **TypeScript** was used to bring more padronization to the code. It makes easier to debbug and read code because of its type intellisense, and it also have a really nice synergy with Storybook.
 - **Styled Components** is awesome because of the CSS-in-JS, which give us a lot of flexibility writting and validating our styles. Furthermore, it forces us to maintain the CSS scoped, which makes easier to maintain and scale the project. With Styled Components I was able to implement a theme for our styles too, which brings more quality and readability to our code.
 - **Storybook** was used to built our components documentation. It have a really nice synergy with typescript because of its controls/props, which makes really easy to test and understand our UI components.
 
