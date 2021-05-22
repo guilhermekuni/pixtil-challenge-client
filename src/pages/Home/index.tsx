@@ -19,7 +19,7 @@ const initialFilters = {
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [filters, setFilters] = useState(initialFilters);
+  const [filters, setFilters] = useState({ ...initialFilters });
 
   const handleGetProducts = useCallback(
     async (filters) => {
@@ -35,8 +35,8 @@ const Home = () => {
   };
 
   const handleClearFilters = () => {
-    setFilters(initialFilters);
-    handleGetProducts(initialFilters);
+    setFilters({ ...initialFilters });
+    handleGetProducts({ ...initialFilters });
   };
 
   const handleChangeFilter = (updatedField) => {
