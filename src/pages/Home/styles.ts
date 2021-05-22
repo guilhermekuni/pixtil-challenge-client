@@ -13,7 +13,6 @@ export const ContentWrapper = styled.section`
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    justify-content: space-between;
     width: 100%;
     padding: ${theme.spacings.medium};
   `}

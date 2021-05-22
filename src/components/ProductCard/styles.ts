@@ -13,7 +13,7 @@ export const CardWrapper = styled.div`
     justify-content: space-between;
     height: 40rem;
     width: 32rem;
-    margin-top: ${theme.spacings.medium};
+    margin: ${theme.spacings.medium} ${theme.spacings.medium} 0 0;
     background: ${theme.gradients.categories[category]};
     border-radius: ${theme.border.radius};
     box-shadow: ${theme.shadows.card};
