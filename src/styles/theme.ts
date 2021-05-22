@@ -14,7 +14,7 @@ export default {
     },
   },
   border: {
-    radius: '2rem',
+    radius: '3rem',
   },
   colors: {
     primary: '#90a955',
@@ -36,7 +36,7 @@ export default {
     },
   },
   shadows: {
-    card: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)',
+    card: '2px 2px 5px 1px rgba(0, 0, 0, 0.5)',
   },
   spacings: {
     xxsmall: '0.8rem',

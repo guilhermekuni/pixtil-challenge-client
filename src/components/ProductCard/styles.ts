@@ -13,7 +13,7 @@ export const CardWrapper = styled.div`
     justify-content: space-between;
     height: 40rem;
     width: 32rem;
-    margin: ${theme.spacings.medium} ${theme.spacings.medium} 0 0;
+    margin: ${theme.spacings.medium} ${theme.spacings.medium};
     background: ${theme.gradients.categories[category]};
     border-radius: ${theme.border.radius};
     box-shadow: ${theme.shadows.card};
@@ -28,7 +28,6 @@ export const CardImage = styled.img`
     background: ${theme.colors.gray};
     border-top-right-radius: ${theme.border.radius};
     border-top-left-radius: ${theme.border.radius};
-    filter: brightness(60%);
   `}
 `;
 
@@ -46,7 +45,7 @@ export const CardTitleWrapper = styled.div`
   ${({ theme }) => css`
     h1 {
       color: ${theme.colors.white};
-      font-size: ${theme.font.sizes.xlarge};
+      font-size: ${theme.font.sizes.large};
     }
 
     h2 {

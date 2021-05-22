@@ -12,6 +12,7 @@ export const ContentWrapper = styled.section`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     flex: 1;
     width: 100%;
     padding: ${theme.spacings.medium};
