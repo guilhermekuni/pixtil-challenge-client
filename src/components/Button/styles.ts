@@ -22,22 +22,23 @@ export const StyledButton = styled.button`
     margin-right: ${theme.spacings.medium};
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.small};
+    transition: 0.5s;
 
     ${isPrimary
       ? css`
           background: ${theme.colors.primaryGradient};
 
           &:hover {
-            /* background: ${theme.colors.primaryGradient}; */
-            opacity: 0.7;
+            background: ${theme.colors.primaryGradientHover};
           }
         `
       : css`
           background: transparent;
-          border: 2px solid ${theme.colors.primary};
+          border: 2px solid ${theme.colors.primaryHover};
 
           &:hover {
-            background: ${theme.colors.primary};
+            background: ${theme.colors.primaryHover};
+            color: ${theme.colors.black};
           }
         `}
   `}

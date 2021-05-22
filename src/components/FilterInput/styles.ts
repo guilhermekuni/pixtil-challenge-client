@@ -26,6 +26,7 @@ export const StyledFilterInput = styled.input`
     margin-right: ${theme.spacings.medium};
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.small};
+    transition: 0.6s;
 
     &:focus {
       border-color: ${theme.colors.primaryHover};
