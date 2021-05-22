@@ -1,6 +1,6 @@
 import { ProductCategory } from 'utils/types/ProductCategoryType';
 
-export interface ProductCardProps {
+export default interface ProductCardProps {
   id: number;
   strain: string;
   strainType: string;

@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { ProductCardProps } from './interface';
+import ProductCardProps from './interface';
 import * as S from './styles';
 
 const ProductCard = ({

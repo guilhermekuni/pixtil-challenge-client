@@ -1,5 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+
 import ProductCard from '.';
+import ProductCardProps from './interface';
 
 export default {
   title: 'ProductCard',
@@ -15,4 +17,6 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story = (args) => <ProductCard {...args} />;
+export const Basic: Story<ProductCardProps> = (args) => (
+  <ProductCard {...args} />
+);
