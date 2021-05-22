@@ -14,12 +14,12 @@ export default {
     },
   },
   border: {
-    radius: '3rem',
+    radius: '1rem',
   },
   colors: {
-    primary: '#90a955',
-    primaryHover: '#4f772d',
-    secondary: '#ecf39e',
+    primary: '#9580ff',
+    primaryHover: '#80ffea',
+    secondary: '#d6ff7f',
     mainBg: '#fff',
     boxBg: '#FAFAFA',
     texts: '#030517',

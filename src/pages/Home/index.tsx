@@ -4,26 +4,57 @@ import productsService from 'services/productsService';
 
 import ProductEntity from 'utils/types/ProductEntity';
 
-import SearchBar from 'components/SearchBar';
+import FilterInput from 'components/FilterInput';
 import ProductCard from 'components/ProductCard';
 
 import * as S from './styles';
 
+const initialFilters = {
+  _page: 1,
+  id: '',
+};
+
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [filters, setFilters] = useState(initialFilters);
 
-  const handleGetProducts = useCallback(async () => {
-    const { data } = await productsService.getProducts();
-    setProducts(data);
-  }, [setProducts]);
+  // const handleGetProducts = useCallback(async () => {
+  //   const { data } = await productsService.getProducts(filters);
+  //   setProducts(data);
+  // }, [setProducts, filters]);
+
+  const handleGetProducts = useCallback(
+    async (filters) => {
+      const { data } = await productsService.getProducts(filters);
+      setProducts(data);
+    },
+    [setProducts]
+  );
+
+  const handleFiltersSubmit = (event) => {
+    event.preventDefault();
+    handleGetProducts(filters);
+  };
+
+  const handleChangeFilter = (updatedField) => {
+    const updatedFilters = { ...filters, ...updatedField };
+    setFilters(updatedFilters);
+  };
 
   useEffect(() => {
-    handleGetProducts();
+    handleGetProducts(filters);
   }, [handleGetProducts]);
 
   return (
     <S.Container>
-      <SearchBar />
+      <form onSubmit={handleFiltersSubmit}>
+        <FilterInput
+          fieldName="id"
+          placeholder="Filter by id"
+          value={filters.id}
+          onChange={(e) => handleChangeFilter({ id: e.target.value })}
+        />
+      </form>
       <S.ContentWrapper>
         {products.map((item: ProductEntity) => (
           <ProductCard

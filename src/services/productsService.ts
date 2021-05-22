@@ -1,8 +1,11 @@
 import api from './api';
+import { convertParamsToQueryString } from './helper';
 
 const productsService = {
-  getProducts: async () => {
-    const response = await api.get('products?_page=1');
+  getProducts: async (params) => {
+    const queryString = convertParamsToQueryString(params);
+    const response = await api.get(`products?${queryString}`);
+
     return response;
   },
 };
