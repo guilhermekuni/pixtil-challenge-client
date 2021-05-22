@@ -1,94 +1,42 @@
-import ProductCard from 'components/ProductCard';
+import { useState, useEffect, useCallback } from 'react';
 
-const mock = {
-  id: 1077076,
-  strain: 'Cali Orange',
-  strainType: 'Hybrid',
-  brand: 'Decibel Gardens',
-  weightGrams: 3.5,
-  placeholderImg: 'https://source.unsplash.com/random/800x600',
-  category: 'flower',
-};
+import productsService from 'services/productsService';
+
+import ProductEntity from 'utils/types/ProductEntity';
+import ProductCard from 'components/ProductCard';
 
 import * as S from './styles';
 
-const Home = () => (
-  <S.Container>
-    <S.ContentWrapper>
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'flower'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'flower'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'preroll'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'preroll'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'vape'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'vape'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'flower'}
-      />
-      <ProductCard
-        id={1077076}
-        strain={'Cali Orange'}
-        strainType={'Hybrid'}
-        brand={'Decibel Gardens'}
-        weightGrams={3.5}
-        placeholderImg={'https://source.unsplash.com/random/800x600'}
-        category={'vape'}
-      />
-    </S.ContentWrapper>
-  </S.Container>
-);
+const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  const handleGetProducts = useCallback(async () => {
+    const { data } = await productsService.getProducts();
+    setProducts(data);
+  }, [setProducts]);
+
+  useEffect(() => {
+    handleGetProducts();
+  }, [handleGetProducts]);
+
+  return (
+    <S.Container>
+      <S.ContentWrapper>
+        {products.map((item: ProductEntity) => (
+          <ProductCard
+            key={item.id}
+            id={item.id}
+            strain={item.strain}
+            strainType={item.strain_type}
+            brand={item.brand}
+            weightGrams={item.weight_grams}
+            placeholderImg={item.placeholder_img}
+            category={item.category}
+          />
+        ))}
+      </S.ContentWrapper>
+    </S.Container>
+  );
+};
 
 export default Home;
