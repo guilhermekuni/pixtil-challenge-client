@@ -12,7 +12,8 @@ import * as S from './styles';
 
 const initialFilters = {
   _page: 1,
-  id: '',
+  strain: '',
+  strain_type: '',
   category: '',
 };
 
@@ -52,9 +53,15 @@ const Home = () => {
       <S.FilterForm onSubmit={handleFiltersSubmit}>
         <FilterInput
           customSize="sm"
-          placeholder="filter by id"
-          value={filters.id}
-          onChange={(e) => handleChangeFilter({ id: e.target.value })}
+          placeholder="filter by strain"
+          value={filters.strain}
+          onChange={(e) => handleChangeFilter({ strain: e.target.value })}
+        />
+        <FilterInput
+          customSize="sm"
+          placeholder="filter by type"
+          value={filters.strain_type}
+          onChange={(e) => handleChangeFilter({ strain_type: e.target.value })}
         />
         <FilterInput
           customSize="lg"

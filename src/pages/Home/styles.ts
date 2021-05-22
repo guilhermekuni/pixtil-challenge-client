@@ -7,6 +7,10 @@ export const Container = styled.div`
     padding: ${theme.spacings.medium};
     justify-content: center;
     align-items: center;
+
+    @media (max-width: ${theme.breakpoints.xsmall}) {
+      padding: ${theme.spacings.xxsmall};
+    }
   `}
 `;
 
@@ -43,6 +47,13 @@ export const ContentWrapper = styled.section`
 `;
 
 export const FilterForm = styled.form`
-  display: flex;
-  flex-direction: row;
+  ${({ theme: { breakpoints } }) => css`
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: ${breakpoints.medium}) {
+      flex-direction: column;
+      height: 30rem;
+    }
+  `}
 `;

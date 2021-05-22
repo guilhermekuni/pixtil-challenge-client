@@ -31,5 +31,12 @@ export const StyledFilterInput = styled.input`
     &:focus {
       border-color: ${theme.colors.primaryHover};
     }
+
+    @media (max-width: ${theme.breakpoints.medium}) {
+      height: 30rem;
+      width: 100%;
+      padding: 0 ${theme.spacings.xsmall};
+      margin: ${theme.spacings.xsmall} 0;
+    }
   `}
 `;

@@ -24,6 +24,11 @@ export const StyledButton = styled.button`
     font-size: ${theme.font.sizes.small};
     transition: 0.5s;
 
+    @media (max-width: ${theme.breakpoints.small}) {
+      width: 100%;
+      margin: ${theme.spacings.xxsmall} 0;
+    }
+
     ${isPrimary
       ? css`
           background: ${theme.colors.primaryGradient};
