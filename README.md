@@ -51,7 +51,7 @@ As I said, I only had one day to built this project, so it has a lot of things t
 - I wasn't able to add/finish a lot of features, such as URL query filter and paginating. I implemented only 3 filters and mocked the `page` param.
 - The App is responsive, but I didn't test every layout possibility. But the media queries logics are all there, I just didn't have much time to test.
 - I didn't use all of the properties from the API available for me. My idea was to built another page to navigate and see these other properties.
-- As I said, the app could have another page, which would make it reasonable to use Redux or ContextAPI to the global state control. But at the end, the App just have one page, so didn't make sense to add this complexity right now.
+- As I said, the app could have another page, which would make it reasonable to use Redux or ContextAPI for the global state control. But at the end, the App just have one page, so didn't make sense to add this complexity right now.
 
 As you can see, there are a lot of things to improve, there are so many things that I wanted to implement, but dind't have the time, so I had to choose what was more important, and I choose a good code structure, which is the foundation to any project. For example:
 - We don't have much unit tests, but we have the structure to implement more, already testing our UI with our custom theme;
