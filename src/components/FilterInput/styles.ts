@@ -22,7 +22,7 @@ export const StyledFilterInput = styled.input`
     border: 2px solid ${theme.colors.primary};
     font-weight: bold;
     outline: none;
-    padding: 0 ${theme.spacings.medium};
+    padding: 0 ${theme.spacings.xsmall};
     margin-right: ${theme.spacings.medium};
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.small};
