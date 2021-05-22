@@ -33,6 +33,11 @@ const Home = () => {
     handleGetProducts(filters);
   };
 
+  const handleClearFilters = () => {
+    setFilters(initialFilters);
+    handleGetProducts(initialFilters);
+  };
+
   const handleChangeFilter = (updatedField) => {
     const updatedFilters = { ...filters, ...updatedField };
     setFilters(updatedFilters);
@@ -60,7 +65,9 @@ const Home = () => {
         <Button type="submit" isPrimary>
           search
         </Button>
-        <Button type="button">clear</Button>
+        <Button type="button" onClick={handleClearFilters}>
+          clear
+        </Button>
       </S.FilterForm>
       <S.ContentWrapper>
         {products.map((item: ProductEntity) => (
